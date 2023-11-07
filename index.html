@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вычисление значения x</title>
+</head>
+<body>
+
+<h2>Введите вещественное число A:</h2>
+    <ul>
+        <li>формулировка задачи <input name="formulation"  value="Дано вещественное число A. Вычислить x = 0 при a > 100; x = a при a < 61, в противном случае x = a**4"></li>
+        <li>Введите число А:<input type="text" id="numberA">
+            <button onclick="calculateX()">Вычислить</button></li>
+        <li><p id="result">Результаты вычислений:  </p></li>
+    </ul>
+
+<script>
+    function calculateX() {
+        var a = parseFloat(document.getElementById("numberA").value);
+        var x;
+
+        if (a > 100) {
+            x = 0;
+        } else if (a < 61) {
+            x = a;
+        } else {
+            x = Math.pow(a, 4);
+        }
+
+        document.getElementById("result").innerHTML = "Значение x: " + x;
+    }
+</script>
+
+</body>
+</html>
